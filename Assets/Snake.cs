@@ -10,7 +10,7 @@ public class Snake : MonoBehaviour
 
     private List<Transform> _segments;
     public Transform segmentPrefab;
-    public int initialSize = 4;
+    //public int initialSize = 1;
 
 
 
@@ -67,9 +67,9 @@ public class Snake : MonoBehaviour
         _segments.Add(transform);
 
         // -1 since the head is already in the list
-        for (int i = 0; i < initialSize - 1; i++) {
-            Grow();
-        }
+        // for (int i = 0; i < initialSize - 1; i++) {
+        //     Grow();
+        // }
     }
 
      private void OnTriggerEnter2D(Collider2D other)
