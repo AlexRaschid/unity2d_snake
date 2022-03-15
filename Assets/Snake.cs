@@ -11,7 +11,7 @@ public class Snake : MonoBehaviour
     private List<Transform> _segments;
     public Transform segmentPrefab;
 
-
+    public int length = 0;
 
     private void Start(){
         _segments = new List<Transform>();
@@ -45,6 +45,7 @@ public class Snake : MonoBehaviour
     }
 
     private void Grow(){
+        length++;
         Transform segment = Instantiate(this.segmentPrefab);
         segment.position = _segments[_segments.Count -1].position;
         
@@ -53,6 +54,7 @@ public class Snake : MonoBehaviour
 
     public void ResetState()
     {
+        length = 0;
         _direction = Vector2.right;
         transform.position = Vector3.zero;
 
