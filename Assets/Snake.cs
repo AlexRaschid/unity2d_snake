@@ -12,6 +12,7 @@ public class Snake : MonoBehaviour
     public Transform segmentPrefab;
 
     public int length = 0;
+    public int lengthBest;
 
     private void Start(){
         _segments = new List<Transform>();
@@ -54,6 +55,9 @@ public class Snake : MonoBehaviour
 
     public void ResetState()
     {
+        if(length > lengthBest){
+            lengthBest = length;
+        }
         length = 0;
         _direction = Vector2.right;
         transform.position = Vector3.zero;
